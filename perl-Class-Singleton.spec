@@ -1,7 +1,7 @@
 %define module	Class-Singleton
 %define name	perl-%{module}
-%define version	1.03
-%define	release	%mkrel 4
+%define version	1.4
+%define	release	%mkrel 1
 
 Name:		%{name}
 Version:	%{version}
@@ -9,11 +9,10 @@ Release:	%{release}
 Summary:	A Singleton class for Perl
 License:	GPL or Artistic
 Group:		Development/Perl
-Source0:	%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}
+Source:     http://www.cpan.org/modules/by-module/Class/%{module}-%{version}.tar.bz2
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	perl-devel
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This is the Class::Singleton module. A Singleton describes an object class that
@@ -22,7 +21,6 @@ class from which other classes can be derived.
 
 %prep
 %setup -q -n %{module}-%{version}
-chmod 644 Singleton.pm
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
@@ -32,15 +30,15 @@ chmod 644 Singleton.pm
 %make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
 %clean 
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
 %doc Changes README
-%{perl_vendorlib}/Class/*
+%{perl_vendorlib}/Class
 %{_mandir}/*/*
 

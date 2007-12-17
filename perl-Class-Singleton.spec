@@ -12,7 +12,6 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}
 Source:     http://www.cpan.org/modules/by-module/Class/%{module}-%{version}.tar.bz2
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This is the Class::Singleton module. A Singleton describes an object class that

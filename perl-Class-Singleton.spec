@@ -1,14 +1,14 @@
 %define upstream_name	 Class-Singleton
-%define upstream_version 1.4
+%define upstream_version 1.5
 
 Summary:	A Singleton class for Perl
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	13
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl-devel
 
@@ -34,4 +34,3 @@ class from which other classes can be derived.
 %doc Changes README
 %{perl_vendorlib}/Class
 %{_mandir}/man3/*
-

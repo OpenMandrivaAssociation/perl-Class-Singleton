@@ -4,13 +4,14 @@
 Summary:	A Singleton class for Perl
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	7
+Release:	8
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl-devel
+BuildRequires:	perl(Test::More)
 
 %description
 This is the Class::Singleton module. A Singleton describes an object class that
